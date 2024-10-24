@@ -1,0 +1,62 @@
+.profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+    gap:2rem;
+    margin-top: 2rem;
+    color: white;
+     &-text{
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+     }
+     h4{
+        width: 60%;
+        text-transform:none;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        letter-spacing: normal;
+        font-weight: 400;
+     }
+    &-image{
+height: 15rem;
+    border-radius: 50%;
+    border: 0.2rem solid var(--accent-color);
+    padding: 1rem;
+    transition: 0.3s ease-in;
+    }
+    &-links{
+        display: flex;
+        gap:2rem;
+        margin-top: 2rem;
+
+        a{
+           color:var(--accent-color);
+
+           svg{
+            font-size: 2rem;
+           }
+        }
+    }
+}
+$breakpoint-mobile: 600px;
+@media (max-width: $breakpoint-mobile) {
+    .profile{
+        margin-top: 5rem;
+    }
+    .profile h1{
+        font-size: 30px;
+        width: 100%;
+        text-align: center;
+    }
+    .profile h2{
+        font-size: 20px;
+        text-align: center;
+    }
+    .profile h4{
+        width: 100%;
+        
+    }
+ 
+}

@@ -1,0 +1,250 @@
+nav{
+    display: grid;
+    grid-template-columns: 5rem auto 5rem;
+    border-bottom: 0.5px solid rgba(255,255,255,0.23);
+    .block{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg{
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        img{
+            cursor: pointer;
+            height: 3rem;
+        }
+    }
+    .data{
+        border: 0.5px solid rgba(255,255,255,0.23);
+        border-top: none;
+        border-bottom: none;
+        padding:0 20rem;
+        ul{
+            display: grid;
+            grid-template-columns: repeat(5, 20%);
+            height: 100%;
+            list-style-type: none;
+            z-index: 1;
+            position: relative;
+            top:30px;
+            padding-bottom: 28px;
+            // padding:20px 0px ; 
+            a{
+                text-decoration: none;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-bottom: 1px solid transparent;
+                li{
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    cursor: pointer;
+                    letter-spacing: 0.2rem;
+
+                }
+
+            };
+        }
+    }
+}
+
+.underline{
+    display: block;
+    position: absolute;
+    z-index: 0;
+    bottom: 0px;
+    left: 0px;
+   
+    width: 20%;
+    background-color: var(--accent-color);
+    height: calc(4px /2);
+    mix-blend-mode: initial;
+    pointer-events: none;
+    transition: 0.5s ease-in-out;
+    &:nth-child(1){
+        transition: calc(0.5s*0.8) ease-in-out;
+    }
+    &:nth-child(2){
+        transition: calc(0.5s*1.2) ease-in-out;
+    }
+  
+}
+$breakpoint-tablet: 1300px;
+  $breakpoint-mobile: 600px;
+  
+  @media (max-width: $breakpoint-tablet) {
+    nav {
+      grid-template-columns: 5rem auto 5rem; // Adjust as necessary
+  
+      .data {
+        padding: 0; // Remove padding for mobile
+        position: relative; // Allow menu positioning
+        height: 100%;
+  
+        .menu {
+          display: none; // Hide menu by default
+          flex-direction: column; // Stack links vertically
+          position: absolute; // Position absolutely for the dropdown effect
+          background: rgba(0, 0, 0, 0.9); // Darker background for contrast
+          padding: 1rem;
+          top: 0; // Align to top
+          right: 0; // Align to right side
+          z-index: 1;
+          transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s; // Smooth opening/closing
+          transform: translateX(100%); // Start hidden off the screen
+          opacity: 0; // Start invisible
+          height: 100vh; // Full height
+          width: 100%; // Full width
+  
+          &.open {
+            display: flex; // Show when open
+            transform: translateX(0); // Slide in from the right
+            opacity: 1; // Fade in
+            transition: transform 0.3s ease, opacity 0.3s ease; // Smooth transition
+          }
+  
+          a {
+            text-decoration: none;
+            color: white;
+            padding: 1rem; // More padding for touch targets
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2); // Subtle separator
+            transition: background-color 0.3s ease; // Smooth background transition
+  
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.1); // Light hover effect
+            }
+  
+            li {
+              text-transform: uppercase;
+              font-weight: 500;
+              cursor: pointer;
+              letter-spacing: 0.1rem; // Adjusted letter spacing
+              font-size: 16px; // Increased font size for readability
+            }
+          }
+        }
+      }
+    }
+  
+    nav .data ul {
+      display: flex;
+      flex-direction: column; // Ensure items stack vertically
+      top: 10px;
+      padding-bottom: 0; // Reset any bottom padding
+    }
+  
+    // Underline styling
+    .underline {
+      display: block;
+      position: absolute;
+      z-index: 0;
+      bottom: -4px; // Adjust to show below the menu
+      left: 0;
+  
+      width: 100%;
+      background-color: var(--accent-color);
+      height: calc(4px / 2);
+      mix-blend-mode: initial;
+      pointer-events: none;
+      transition: 0.5s ease-in-out;
+    }
+  }
+  
+
+  @media (max-width: $breakpoint-mobile) {
+    nav {
+      grid-template-columns: 5rem auto 5rem; // Adjust as necessary
+  
+      .data {
+        padding: 0; // Remove padding for mobile
+        position: relative; // Allow menu positioning
+        height: 100%;
+  
+        .menu {
+          display: none; // Hide menu by default
+          flex-direction: column; // Stack links vertically
+          position: absolute; // Position absolutely for the dropdown effect
+          background: rgba(0, 0, 0, 0.9); // Darker background for contrast
+          padding: 1rem;
+          top: 0; // Align to top
+          right: 0; // Align to right side
+          z-index: 1;
+          transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s; // Smooth opening/closing
+          transform: translateX(100%); // Start hidden off the screen
+          opacity: 0; // Start invisible
+          height: 100vh; // Full height
+          width: 100%; // Full width
+  
+          &.open {
+            display: flex; // Show when open
+            transform: translateX(0); // Slide in from the right
+            opacity: 1; // Fade in
+            transition: transform 0.3s ease, opacity 0.3s ease; // Smooth transition
+          }
+  
+          a {
+            text-decoration: none;
+            color: white;
+            padding: 1rem; // More padding for touch targets
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2); // Subtle separator
+            transition: background-color 0.3s ease; // Smooth background transition
+  
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.1); // Light hover effect
+            }
+  
+            li {
+              text-transform: uppercase;
+              font-weight: 500;
+              cursor: pointer;
+              letter-spacing: 0.1rem; // Adjusted letter spacing
+              font-size: 16px; // Increased font size for readability
+            }
+          }
+        }
+      }
+    }
+  
+    nav .data ul {
+      display: flex;
+      flex-direction: column; // Ensure items stack vertically
+      top: 10px;
+      padding-bottom: 0; // Reset any bottom padding
+    }
+  
+    // Underline styling
+    .underline {
+      display: block;
+      position: absolute;
+      z-index: 0;
+      bottom: -4px; // Adjust to show below the menu
+      left: 0;
+  
+      width: 100%;
+      background-color: var(--accent-color);
+      height: calc(4px / 2);
+      mix-blend-mode: initial;
+      pointer-events: none;
+      transition: 0.5s ease-in-out;
+    }
+  }
+  
+    // nav .data{
+    //     padding: 0px 10px;
+    //    }
+    // nav .data ul{
+    //     grid-template-columns:repeat(2,1fr);
+    // }
+    // nav .data ul li{
+    //     font-size: 15px;
+    //     letter-spacing: 1px;
+    // }
+    // nav{
+    //     grid-template-columns: 5rem 20.6rem 5rem;
+    // }
+
+  
+  

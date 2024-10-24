@@ -1,0 +1,19 @@
+.compare{
+    display: grid;
+    grid-template-columns: 49% 49%;
+    height: 100%;
+    gap:1rem;
+    padding: 1rem;
+}
+
+$breakpoint-tablet: 600px;
+$breakpoint-mobile: 800px;
+
+
+
+@media (max-width: $breakpoint-mobile) {
+   .compare{
+    grid-template-columns: 1fr;
+   }
+    
+}

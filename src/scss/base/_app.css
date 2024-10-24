@@ -1,0 +1,57 @@
+.main-container {
+  position: relative;
+  max-width: 100vw;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.app {
+  z-index: 1;
+  background: rgba(4, 6, 20, 0.85);
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  border: 1px solid rgba(23, 20, 20, 0.37);
+  display: grid;
+  grid-template-columns: 10vh auto 10vh;
+  grid-template-columns: 1fr;
+}
+
+.app .content {
+  background-color: rgba(255, 255, 255, 0.052);
+  margin: 0rem 5rem;
+  border: 0.5px solid rgba(255, 255, 255, 0.203);
+  border-top: none;
+  border-bottom: none;
+  height: 780px;
+  margin-bottom: -33px;
+  padding-bottom: 3rem;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0.4rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(219, 219, 219, 0.557);
+}
+
+@media (max-width: 800px) {
+  .app {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .app {
+    overflow-x: hidden;
+    display: block;
+  }
+  .app .content {
+    overflow-x: hidden;
+    margin-bottom: 0px;
+  }
+}
